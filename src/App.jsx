@@ -6,6 +6,7 @@ function App() {
       name: "vinay",
       email:"vinay@gmail.com",  
       age: 22,
+      city : "hyd"
       
     }
     const userArray = ["vinay", "ajay", "vijay"];
@@ -38,6 +39,7 @@ function App() {
       <h1>{add(5,6)}</h1>
       <h1>{userobj.name}</h1>
       <h1>{userArray[1]}</h1>
+      <h1>{userobj.city}</h1>
       <img 
       src={myPhoto} alt="my photo"           
       
