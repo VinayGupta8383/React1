@@ -1,22 +1,22 @@
-import myPhoto from "./my_photo.JPG";
 
+import{ useState } from "react";
+import Counter from "./counter";
 function App() {
-    function callfun(){
-        alert("function called");
-    }
-    
-    const fruit=()=>{
-        alert("apple");
-    }
-    
-    
+  const [fruit,setfruit] = useState("Apple");  
+  const handleFruit =()=>{
+    setfruit("Mango");
+  }
+  
+  
+
   return (
     <div>
-        <h1>event and function call</h1>
-        <button onClick={fruit}>banana</button>
-        <button onClick={callfun}>Click Me</button>
+        <h1>State in React  Js</h1>
         
-                 
+      <h1>{fruit}</h1> 
+      <button onClick={handleFruit}>Change Fruit Name</button>
+       <Counter />          
+       
       
     </div>
     
