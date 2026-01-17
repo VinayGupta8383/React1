@@ -1,13 +1,10 @@
-function User({user}) {
+function User({name="new user"}) {
     
     return (
         <div>
-            <hr />
-            <h2>Name: {user.name}</h2>
-            <h2>Age: {user.age}</h2>
-            <h2>Email: {user.email}</h2>
+            <h1>Hi, {name}</h1>
         </div>
-    )
+    ) 
 
 }
 export default User;  
