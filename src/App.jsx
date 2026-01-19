@@ -1,30 +1,122 @@
                 
-import {useState} from "react";
+
 
 function App() {
    
-  const [gender,setGender]=useState('female'); 
-  const [city, setCity] = useState('delhi'); 
+
+  const userData=[
+    {
+      name:'vinay',
+      age:'28',
+      email:"vinay434@test.com",
+      id:1
+    },
+
+    {
+      name:'sam',
+      age:'28',
+      email:"sam434@test.com",
+      id:2
+    },
+
+    {
+      name:'peter',
+      age:'28',
+      email:"peter434@test.com",
+      id:3
+    },
+
+    {
+      name:'bruce',
+      age:'28',
+      email:"bruce434@test.com",
+      id:4
+    },
+  ] 
+  
   return (
     <div>
-      <h1>Handle Radio and Dropdown</h1>
-      <input type="radio" onChange={(event)=>setGender(event.target.value)} name="gender" value={"male"} checked={gender == 'male'} id="male"/>
-      <label htmlFor="male">Male</label>
-      <input type="radio" onChange={(event)=>setGender(event.target.value)} name="gender" value={"female"} checked={gender == 'female'} id="female"/>
-       <label htmlFor="female">Female</label>
-       <h2>Selected Gender :{gender}</h2>
+      <h1>Loop in JSX with Map Function</h1>
+      <table border="1">
+    <thead>
+       <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Age</td>
+        </tr>
+    </thead>
+       <tbody>
+        {
+          userData.map((user)=>(
+        <tr key={user.id} >
+        <td>{user.id}</td>
+        <td>{user.name}</td>
+        <td>{user.email}</td>
+        <td>{user.age}</td>
+        </tr>
+          ))
+        }
+        </tbody>    
 
-      <br /> <br /><br />
-      <h4>Select City</h4>
-      <select onChange={(event)=>setCity(event.target.value)} defaultValue={"Delhi"} >
-       <option value="noida">Noida</option>
-       <option value="gurgaon">Gurgaon</option>
-       <option value="delhi">Delhi</option>
-        </select>
-        <h2>Selected City : {city}</h2>
-       
+      </table>
 
-       
+      <h1>Dummy Data</h1>
+      <table border="1">
+         <thead>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Email</td>
+              <td>Age</td>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+              <td>1</td>
+              <td>vinay</td>
+              <td>vinay434@test.com</td>
+              <td>28</td>
+            </tr>
+
+            <tr>
+              <td>1</td>
+              <td>vinay</td>
+              <td>vinay434@test.com</td>
+              <td>28</td>
+            </tr>
+
+            <tr>
+              <td>1</td>
+              <td>vinay</td>
+              <td>vinay434@test.com</td>
+              <td>28</td>
+            </tr>
+
+            <tr>
+              <td>1</td>
+              <td>vinay</td>
+              <td>vinay434@test.com</td>
+              <td>28</td>
+            </tr>
+
+            <tr>
+              <td>1</td>
+              <td>vinay</td>
+              <td>vinay434@test.com</td>
+              <td>28</td>
+            </tr>
+
+            <tr>
+              <td>1</td>
+              <td>vinay</td>
+              <td>vinay434@test.com</td>
+              <td>28</td>
+            </tr>
+               
+         </tbody>
+      </table>
+
     </div>
     
   )
