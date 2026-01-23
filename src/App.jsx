@@ -1,17 +1,66 @@
-import {useState} from "react"                
-import Clock from "./Clock"
+import College from "./College";
+
 function App() {
-   const [color,setColor]=useState("green")
+   
+  const collegeData=[
+    {
+      name:"IET Ayodhya",
+      city:"Ayodhya",
+      website:"www.iet.com",
+      student:[
+        {
+          name:"vinay",
+          age:'22',
+          email:"vinay@test.com"
+        },
+        {
+          name:"abhay",
+          age:'22',
+          email:"abhay@test.com"
+        },
+        {
+          name:"vipin",
+          age:'22',
+          email:"vipin@test.com"
+        },
+      ]
+    },
+
+    {
+      name:"IET Delhi",
+      city:"Delhi",
+      website:"www.iit.com",
+      student:[
+        {
+          name:"abhay",
+          age:'22',
+          email:"abhay@test.com"
+        },
+      ]
+    },
+    {
+      name:"KCIET Hisar",
+      city:"Hisar",
+      website:"www.kciet.com",
+      student:[
+        {
+          name:"vipin",
+          age:'22',
+          email:"vipin@test.com"
+        },
+      ]
+    },
+  ]
   return (
     <div>
-       <h1>Digital Clock in React js React js</h1>
-       <select onChange={(event)=>setColor(event.target.value)}>
-         <option value={"red"}>Red</option>
-         <option value={"blue"}>Blue</option>
-         <option value={"green"}>Green</option>
-         <option value={"orange"}>orange</option>
-       </select>
-       <Clock color={color}/>
+        <h1>Nested looping with Component</h1>
+        {
+          collegeData.map((college,index)=>(
+            <div key={index}>
+              <College college={college}/>
+              </div>
+          )) 
+        }
     </div>
     
   )
