@@ -1,66 +1,32 @@
-import College from "./College";
+import {useEffect, useState} from "react";
 
 function App() {
    
-  const collegeData=[
-    {
-      name:"IET Ayodhya",
-      city:"Ayodhya",
-      website:"www.iet.com",
-      student:[
-        {
-          name:"vinay",
-          age:'22',
-          email:"vinay@test.com"
-        },
-        {
-          name:"abhay",
-          age:'22',
-          email:"abhay@test.com"
-        },
-        {
-          name:"vipin",
-          age:'22',
-          email:"vipin@test.com"
-        },
-      ]
-    },
+  const [counter,setCounter]=useState(0);
+  const [data,setData]=useState(0);
 
-    {
-      name:"IET Delhi",
-      city:"Delhi",
-      website:"www.iit.com",
-      student:[
-        {
-          name:"abhay",
-          age:'22',
-          email:"abhay@test.com"
-        },
-      ]
-    },
-    {
-      name:"KCIET Hisar",
-      city:"Hisar",
-      website:"www.kciet.com",
-      student:[
-        {
-          name:"vipin",
-          age:'22',
-          email:"vipin@test.com"
-        },
-      ]
-    },
-  ]
+
+  useEffect(()=>{
+    //callonce();
+    counterFunction();
+  },[counter])
+
+  counterFunction();
+  function counterFunction(){
+    console.log("counterFunction",counter);
+  }
+
+
+
+    function callonce(){
+       console.log("callonce function called");
+  }
+   //callonce();
   return (
     <div>
-        <h1>Nested looping with Component</h1>
-        {
-          collegeData.map((college,index)=>(
-            <div key={index}>
-              <College college={college}/>
-              </div>
-          )) 
-        }
+        <h1>useEffect Hook</h1>
+        <button onClick={()=>setCounter(counter+1)}>Counter {counter}</button>
+        <button onClick={()=>setData(data+1)}>Data {data}</button>
     </div>
     
   )
