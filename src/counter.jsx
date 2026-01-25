@@ -1,15 +1,19 @@
-import {useState} from "react";   //hooks
-const Counter=()=>{
-    const [count,setCount]=useState(0);     // state 
-    const [rCounter,setRCounter]=useState(10)  //state
-    return(
+import { useEffect } from "react";
+const Counter=({count,data})=>{
+    const handleCounter=()=>{
+        console.log("handleCounter called", count,data);
+
+    }
+useEffect(()=>{
+  handleCounter();
+  
+},[count,data])    
+   
+     return (
         <div>
-            <h1>Counter:{count} </h1>
-            <h2>R Counter:{rCounter}</h2>
-            <button onClick={() =>setCount(count+1)}>Update Counter</button>
-            <button onClick={() =>setRCounter(rCounter-1)}>Update R Counter </button>
+            <h1>Counter Value {count}</h1>
+            <h1>Data Value {data}</h1>
         </div>
     )
 }
-
-export default Counter;
+export default Counter 
