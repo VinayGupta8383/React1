@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 const Counter=({count,data})=>{
-    const handleCounter=()=>{
-        console.log("handleCounter called", count,data);
-
-    }
+    
+   
 useEffect(()=>{
-  handleCounter();
+ console.log("mounting phase only");
+  },[])  
   
-},[count,data])    
+  useEffect(()=>{
+ console.log("update phase only");
+  },[count])  
    
      return (
         <div>
