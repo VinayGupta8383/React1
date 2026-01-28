@@ -1,26 +1,21 @@
-import {useState} from "react"; 
-
-import Counter from "./Counter";
+import './css/style.css'
+import myPhoto from "./my_photo.JPG";
 function App() {
-  const [count,setCount]=useState(0);
-  const [data,setData]=useState(0);
-  const [display, setDisplay]=useState(true); 
   
    
   return (
-      <div>
-        {
-          display? <Counter count={count} data={data}></Counter>:null
-        }
-        
-       
-        <button onClick={()=>setCount(count+1)} >Counter</button>
-        <button onClick={()=>setData(data+1)} >Data</button> 
-        <button onClick={()=>setDisplay(!display)} >Toggle</button> 
-         
-         
-        
-      </div>
+      <>
+        <h1 className="heading">External Style</h1>
+         <div>
+          <div>
+            <img className='img-style' src={myPhoto} alt="My Photo"  />
+          </div>
+          <div>
+            <h4>Vinay</h4>
+            <p>Software devloper</p>
+          </div>
+         </div>
+      </>
     
   )
 }
