@@ -36,7 +36,7 @@ function App() {
         <StyleBtn>Signup</StyleBtn>
         <StyleBtn>Back</StyleBtn>
         <StyleBtn>Login</StyleBtn>
-      </>
+      </> 
     
   )
 }
